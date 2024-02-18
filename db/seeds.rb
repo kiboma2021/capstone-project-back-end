@@ -10,7 +10,7 @@ User.create(name: "David", email: "david@example.com", password: "passwordDEF")
 User.create(name: "Emily", email: "emily@example.com", password: "passwordGHI")
 User.create(name: "Daniel", email: "daniel@example.com", password: "passwordJKL")
 
-#book seed data
+
 # Seed data for books
 Book.create(title: "The Power of Habit", price: 20, author: "Charles Duhigg", description: "Explores the science behind why habits exist and how they can be changed.", year: 2012, rating: 4, user_id: 1)
 Book.create(title: "Atomic Habits", price: 25, author: "James Clear", description: "Provides practical strategies for building good habits, breaking bad ones, and mastering the tiny behaviors that lead to remarkable results.", year: 2018, rating: 5, user_id: 2)
@@ -22,3 +22,26 @@ Book.create(title: "The 7 Habits of Highly Effective People", price: 24, author:
 Book.create(title: "The Lean Startup", price: 26, author: "Eric Ries", description: "Introduces the lean startup methodology, which emphasizes rapid iteration, customer feedback, and continuous improvement to create successful businesses.", year: 2011, rating: 4, user_id: 8)
 Book.create(title: "Start with Why: How Great Leaders Inspire Everyone to Take Action", price: 23, author: "Simon Sinek", description: "Explores the concept of the 'golden circle' and the importance of starting with 'why' when communicating and leading.", year: 2009, rating: 4, user_id: 9)
 Book.create(title: "Rich Dad Poor Dad", price: 21, author: "Robert T. Kiyosaki", description: "Shares personal finance lessons learned from the author's 'rich dad' and 'poor dad' to help readers achieve financial independence.", year: 1997, rating: 4, user_id: 10)
+
+# seed data for join table
+# Assuming you have 10 users and 10 books already created in the database
+User.find(1).books << Book.find(4)
+User.find(2).books << Book.find(7)
+User.find(3).books << Book.find(2)
+User.find(4).books << Book.find(10)
+User.find(5).books << Book.find(1)
+User.find(6).books << Book.find(5)
+User.find(7).books << Book.find(8)
+User.find(8).books << Book.find(6)
+User.find(9).books << Book.find(3)
+User.find(10).books << Book.find(9)
+User.find(1).books << Book.find(6)
+User.find(2).books << Book.find(9)
+User.find(3).books << Book.find(1)
+User.find(4).books << Book.find(8)
+User.find(5).books << Book.find(3)
+User.find(6).books << Book.find(10)
+User.find(7).books << Book.find(5)
+User.find(8).books << Book.find(2)
+User.find(9).books << Book.find(7)
+User.find(10).books << Book.find(4)
