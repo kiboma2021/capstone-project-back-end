@@ -18,3 +18,11 @@ FavoriteBook.create(user_id: 1, book_id: 2)
 FavoriteBook.create(user_id: 2, book_id: 3)
 FavoriteBook.create(user_id: 2, book_id: 4)
 FavoriteBook.create(user_id: 3, book_id: 5)
+
+#some other examples below : 
+# Find the user
+user = User.find(1)
+# Create a FavoriteBook instance with the desired book
+favorite_book = FavoriteBook.new(user: user, book: Book.find(3))
+# Save the favorite_book instance
+favorite_book.save
