@@ -10,6 +10,9 @@ require 'rspec/rails'
 # Add this line to include shoulda-matchers
 require 'shoulda/matchers'
 
+# Define URI::MailTo::EMAIL_REGEXP
+URI::MailTo::EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
