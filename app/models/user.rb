@@ -1,8 +1,11 @@
 class User < ApplicationRecord
-  has_many :favorite_books, dependent: :destroy
-  has_many :books, through: :favorite_books
+  include Devise::JWT::RevocationStrategies::JTIMatcher
+
+  devise :database_authenticatable, :registerable,
+         :validatable, :jwt_authenticatable, jwt_revocation_strategy: self
+
   has_many :books
+  has_many :favourites, through: :books, dependent: :destroy
   validates :name, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

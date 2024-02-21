@@ -1,4 +1,4 @@
-class FavoriteBook < ApplicationRecord
+class Favourite < ApplicationRecord
   belongs_to :user
   belongs_to :book
   validates :user_id, presence: true
