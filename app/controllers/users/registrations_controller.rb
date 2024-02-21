@@ -5,13 +5,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   # Register: POST http://localhost:4000/signup
-  # Body: 
+  # Body:
   # "user": {
   #   "name": {name},
   #   "email": {email},
   #   "password": {password},
   #   "password_confirmation": {password}
-  #}
+  # }
 
   def respond_with(resource, _opts = {})
     if request.method == 'POST' && resource.persisted?

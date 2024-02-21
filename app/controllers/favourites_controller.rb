@@ -3,7 +3,7 @@ class FavouritesController < ApplicationController
   before_action :set_favourite, only: %i[destroy show]
 
   # POST http://localhost:4000/favourites
-  # Body: 
+  # Body:
   # "favourite": {
   #     "user_id": {user_id},
   #     "book_id": {book_id}

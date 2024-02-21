@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   # Login: POST http://localhost:4000/login
-  # Body: 
+  # Body:
   # "user": {
   #   "name": {name},
   #   "email": {email},
