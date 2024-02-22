@@ -40,8 +40,10 @@ class FavouritesController < ApplicationController
   # GET http://localhost:4000/favourites?id={user_id}
   def index
     user_id = params[:id]
-    @favourites = Favourite.where(user_id:)
-    render json: @favourites
+    @user = User.find(user_id)
+    @book = @user.books
+    @favourites = @user.favourites.includes(:book)
+    render json: @favourites.as_json(include: { book: { methods: :image_url } })
   end
 
   private
