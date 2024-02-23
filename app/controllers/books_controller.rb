@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   # GET http://localhost:4000/books/{id}
   def show
     @book = Book.find(params[:id])
-    render json: @book
+    render json: @book, methods: :image_url
   end
 
   # DELETE http://localhost:4000/books/{id}
