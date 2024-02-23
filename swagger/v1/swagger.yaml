@@ -1,0 +1,239 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/books":
+    post:
+      summary: Creates a book
+      tags:
+      - Books
+      parameters: []
+      responses:
+        '200':
+          description: Book created successfully
+        '500':
+          description: Book could not be saved
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                title:
+                  type: string
+                author:
+                  type: string
+                price:
+                  type: number
+                year:
+                  type: integer
+                rating:
+                  type: number
+                image_url:
+                  type: string
+                description:
+                  type: string
+              required:
+              - user_id
+              - title
+              - author
+              - price
+              - year
+              - rating
+              - description
+    get:
+      summary: Retrieves all books
+      tags:
+      - Books
+      responses:
+        '200':
+          description: Books retrieved
+  "/books/{id}":
+    get:
+      summary: Retrieves a book
+      tags:
+      - Books
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Book retrieved
+    delete:
+      summary: Deletes a book
+      tags:
+      - Books
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Book deleted
+        '422':
+          description: Book couldn't be deleted
+  "/favourites":
+    post:
+      summary: Creates a favourite book association
+      tags:
+      - Favourites
+      parameters: []
+      responses:
+        '200':
+          description: Added to favourites!
+        '401':
+          description: Someting went wrong
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                book_id:
+                  type: string
+              required:
+              - user_id
+              - book_id
+    get:
+      summary: Retrieves the favourite book id list
+      tags:
+      - Favourites
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Favourite list found!
+  "/favourites/{id}":
+    get:
+      summary: Retrieves a favourite book association
+      tags:
+      - Favourites
+      parameters:
+      - name: id
+        in: path
+        tipe: integer
+        required: true
+      responses:
+        '200':
+          description: Favourite found!
+    delete:
+      summary: Deletes a favourite book association
+      tags:
+      - Favourites
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Deleted from favourites
+        '422':
+          description: Something went wrong
+  "/signup":
+    post:
+      summary: Creates an user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: Signed up successfully
+        '422':
+          description: User couldn't be created successfully.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+    delete:
+      summary: Deletes an user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: Account deleted successfully
+        '422':
+          description: Account couldn't be deleted successfully.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+  "/login":
+    post:
+      summary: Logs in the user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: User logged in successfully
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+    delete:
+      summary: Deletes user
+      tags:
+      - Users
+      parameters:
+      - name: auth_token
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Logged out successfully
+        '401':
+          description: Could not find an active session
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
