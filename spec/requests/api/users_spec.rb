@@ -17,23 +17,23 @@ RSpec.describe 'api/users', type: :request do
       }
 
       response '200', 'Signed up successfully' do
-        let(:user) { 
-          { 
+        let(:user) do
+          {
             id: 1,
             name: 'username',
             email: 'username@example.com'
           }
-        }
+        end
         run_test!
       end
 
       response '422', "User couldn't be created successfully." do
-        let(:status) {
+        let(:status) do
           {
             code: 422,
             message: "User couldn't be created successfully. [+ error messages.]"
           }
-        }
+        end
         run_test!
       end
     end
@@ -51,22 +51,22 @@ RSpec.describe 'api/users', type: :request do
       }
 
       response '200', 'Account deleted successfully' do
-        let(:status) {
+        let(:status) do
           {
             code: 200,
             message: 'Account deleted successfully.'
           }
-        }
+        end
         run_test!
       end
 
       response '422', "Account couldn't be deleted successfully." do
-        let(:status) {
+        let(:status) do
           {
             code: 422,
             message: "Account couldn't be deleted successfully."
           }
-        }
+        end
         run_test!
       end
     end
@@ -79,35 +79,35 @@ RSpec.describe 'api/users', type: :request do
       parameter name: :user, in: :body, schema: {
         type: :object,
         properties: {
-          email: { type: :string},
-          password: { type: :string}
+          email: { type: :string },
+          password: { type: :string }
         },
         required: %w[email password]
       }
 
       response '200', 'User logged in successfully' do
-        let(:response) {
+        let(:response) do
           {
             status: {
               code: 200, message: 'Logged in successfully'
             },
             data: {
               id: 1,
-              name: "Username",
-              email: 
+              name: 'Username',
+              email:
             }
           }
-        }
+        end
         run_test!
       end
 
       response '422', 'User could not log in' do
-        let(:response) {
+        let(:response) do
           {
             code: 422,
             message: "User couldn't log in. [error messages]"
           }
-        }
+        end
       end
     end
 
@@ -116,22 +116,22 @@ RSpec.describe 'api/users', type: :request do
       parameter name: :auth_token, in: :header, type: :string
 
       response '200', 'Logged out successfully' do
-        let(:respoonse) {
+        let(:respoonse) do
           {
             status: 200,
-            message: "logged out successfully",
+            message: 'logged out successfully'
           }
-        }
+        end
         run_test!
       end
 
       response '401', 'Could not find an active session' do
-        let(:response) {
+        let(:response) do
           {
             status: 401,
             message: 'Could not find an active session'
           }
-        }
+        end
         run_test!
       end
     end

@@ -1,12 +1,13 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/books', type: :request do
-  let(:user) { User.create!(
+  let(:user) do
+    User.create!(
       name: 'username',
       email: 'example@example.com',
       password: 'password'
-    ) 
-  }
+    )
+  end
 
   path '/books' do
     post 'Creates a book' do
@@ -28,7 +29,7 @@ RSpec.describe 'api/books', type: :request do
       }
 
       response '200', 'Book created successfully' do
-        let(:book) {
+        let(:book) do
           {
             title: 'Book Title',
             author: 'Book Author',
@@ -38,17 +39,17 @@ RSpec.describe 'api/books', type: :request do
             description: 'Book Description',
             image_url: 'book_image.jpg'
           }
-        }
+        end
         run_test!
       end
 
       response '500', 'Book could not be saved' do
-        let(:status) {
+        let(:status) do
           {
             code: 500,
             message: "Book couldn't be saved. [+ error messages.]"
           }
-        }
+        end
         run_test!
       end
     end
@@ -58,9 +59,9 @@ RSpec.describe 'api/books', type: :request do
       produces 'application/json'
 
       response '200', 'Books retrieved' do
-        let(:books) {
+        let(:books) do
           []
-        }
+        end
         run_test!
       end
     end
@@ -73,17 +74,17 @@ RSpec.describe 'api/books', type: :request do
       parameter name: :id, in: :path, type: :integer
 
       response '200', 'Book retrieved' do
-        let(:book) {
+        let(:book) do
           Book.new(
             title: 'Moby Dick',
             author: 'Herman Melville',
             description: 'About whales',
             price: 5,
             rating: 4,
-            user: user,
+            user:,
             year: 1920
           )
-        }
+        end
         run_test!
       end
     end
@@ -94,23 +95,23 @@ RSpec.describe 'api/books', type: :request do
       parameter name: :id, in: :path, type: :integer
 
       response '200', 'Book deleted' do
-        let(:response) {
+        let(:response) do
           {
             message: 'Book deleted'
           }
-        }
+        end
         run_test!
       end
-      
+
       response '422', 'Book couldn\'t be deleted' do
-        let(:response) {
+        let(:response) do
           {
             message: '[error messages]',
             status: {
               code: 422
             }
           }
-        }
+        end
         run_test!
       end
     end

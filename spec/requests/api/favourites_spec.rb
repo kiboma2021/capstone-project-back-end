@@ -15,20 +15,20 @@ RSpec.describe 'api/favourites', type: :request do
       }
 
       response '200', 'Added to favourites!' do
-        let(:response) {
+        let(:response) do
           {
-            message: "Added to favourites!"
+            message: 'Added to favourites!'
           }
-        }
+        end
         run_test!
       end
 
       response '401', 'Someting went wrong' do
-        let(:response) {
+        let(:response) do
           {
-            message: "Something went wrong. [error description]"
+            message: 'Something went wrong. [error description]'
           }
-        }
+        end
         run_test!
       end
     end
@@ -38,9 +38,9 @@ RSpec.describe 'api/favourites', type: :request do
       parameter name: :id, in: :query, type: :integer
 
       response '200', 'Favourite list found!' do
-        let(:favourites) {
+        let(:favourites) do
           []
-        }
+        end
         run_test!
       end
     end
@@ -52,35 +52,35 @@ RSpec.describe 'api/favourites', type: :request do
       parameter name: :id, in: :path, tipe: :integer
 
       response '200', 'Favourite found!' do
-        let(:favourite) {
+        let(:favourite) do
           {
             user_id: 1,
             book_id: 2
           }
-        }
+        end
         run_test!
       end
     end
-    
+
     delete 'Deletes a favourite book association' do
       tags 'Favourites'
       parameter name: :id, in: :path, type: :integer
 
       response '200', 'Deleted from favourites' do
-        let(:response) {
+        let(:response) do
           {
-            message: "Deleted from favourites"
+            message: 'Deleted from favourites'
           }
-        }
+        end
         run_test!
       end
 
       response '422', 'Something went wrong' do
-        let(:response) {
+        let(:response) do
           {
-            message: "Something went wrong. [error description]"
+            message: 'Something went wrong. [error description]'
           }
-        }
+        end
         run_test!
       end
     end
