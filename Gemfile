@@ -36,6 +36,7 @@ gem 'bootsnap', require: false
 gem 'rack-cors'
 gem 'rspec-rails', '~> 5.0'
 gem 'shoulda-matchers', '~> 5.0', require: false
+gem 'rswag'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
