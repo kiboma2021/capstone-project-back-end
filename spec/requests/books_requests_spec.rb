@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'books requests', type: :request do
   describe 'POST /books' do
-    let(:user) { User.new(
-      name: 'username',
-      email: 'example@example.com',
-      password: 'password123',
-      password_confirmation: 'password123'
-    )}
+    let(:user) do
+      User.new(
+        name: 'username',
+        email: 'example@example.com',
+        password: 'password123',
+        password_confirmation: 'password123'
+      )
+    end
     before do
       user.save!
     end
@@ -137,22 +139,26 @@ RSpec.describe 'books requests', type: :request do
   end
 
   describe 'GET /books/{id}' do
-    let(:user) { User.new(
-      name: 'username',
-      email: 'example@example.com',
-      password: 'password123',
-      password_confirmation: 'password123'
-    )}
+    let(:user) do
+      User.new(
+        name: 'username',
+        email: 'example@example.com',
+        password: 'password123',
+        password_confirmation: 'password123'
+      )
+    end
 
-    let(:book) { Book.new(
-      title: 'Book1',
-      price: 4,
-      year: 2004,
-      author: 'Author',
-      rating: 3,
-      description: 'Description',
-      user_id: user.id
-    )}
+    let(:book) do
+      Book.new(
+        title: 'Book1',
+        price: 4,
+        year: 2004,
+        author: 'Author',
+        rating: 3,
+        description: 'Description',
+        user_id: user.id
+      )
+    end
 
     before do
       user.save!
@@ -173,62 +179,72 @@ RSpec.describe 'books requests', type: :request do
   end
 
   describe 'DELETE /books/{id}' do
-    let(:user) { User.new(
-      name: 'username',
-      email: 'example@example.com',
-      password: 'password123',
-      password_confirmation: 'password123'
-    )}
+    let(:user) do
+      User.new(
+        name: 'username',
+        email: 'example@example.com',
+        password: 'password123',
+        password_confirmation: 'password123'
+      )
+    end
 
-    let(:book) { Book.new(
-      title: 'Book1',
-      price: 4,
-      year: 2004,
-      author: 'Author',
-      rating: 3,
-      description: 'Description',
-      user_id: user.id
-    )}
+    let(:book) do
+      Book.new(
+        title: 'Book1',
+        price: 4,
+        year: 2004,
+        author: 'Author',
+        rating: 3,
+        description: 'Description',
+        user_id: user.id
+      )
+    end
     before do
       user.save!
       book.save!
     end
 
     it 'deletes a book by id' do
-      expect{ delete "/books/#{book.id}" }
-      .to change(Book, :count).by(-1)
+      expect { delete "/books/#{book.id}" }
+        .to change(Book, :count).by(-1)
 
       expect(response.body).to match(/Book deleted/)
     end
   end
 
   describe 'GET /books' do
-    let(:user) { User.new(
-      name: 'username',
-      email: 'example@example.com',
-      password: 'password123',
-      password_confirmation: 'password123'
-    )}
+    let(:user) do
+      User.new(
+        name: 'username',
+        email: 'example@example.com',
+        password: 'password123',
+        password_confirmation: 'password123'
+      )
+    end
 
-    let(:book) { Book.new(
-      title: 'Book1',
-      price: 4,
-      year: 2004,
-      author: 'Author',
-      rating: 3,
-      description: 'Description',
-      user_id: user.id
-    )}
+    let(:book) do
+      Book.new(
+        title: 'Book1',
+        price: 4,
+        year: 2004,
+        author: 'Author',
+        rating: 3,
+        description: 'Description',
+        user_id: user.id
+      )
+    end
 
-    let(:book2) { Book.new(
-      title: 'Book2',
-      price: 4,
-      year: 2004,
-      author: 'Author',
-      rating: 3,
-      description: 'Description',
-      user_id: user.id
-    )}
+    let(:book2) do
+      Book.new(
+        title: 'Book2',
+        price: 4,
+        year: 2004,
+        author: 'Author',
+        rating: 3,
+        description: 'Description',
+        user_id: user.id
+      )
+    end
 
     before do
       user.save!

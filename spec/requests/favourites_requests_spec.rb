@@ -1,22 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe 'favourites requests', type: :request do
-  let(:user) { User.new(
+  let(:user) do
+    User.new(
       name: 'username',
       email: 'example@example.com',
       password: 'password123',
       password_confirmation: 'password123'
-    )}
+    )
+  end
 
-  let(:book) { Book.new(
-    title: 'Book1',
-    price: 4,
-    year: 2004,
-    author: 'Author',
-    rating: 3,
-    description: 'Description',
-    user_id: user.id
-  )}
+  let(:book) do
+    Book.new(
+      title: 'Book1',
+      price: 4,
+      year: 2004,
+      author: 'Author',
+      rating: 3,
+      description: 'Description',
+      user_id: user.id
+    )
+  end
 
   before do
     user.save!
@@ -24,8 +28,6 @@ RSpec.describe 'favourites requests', type: :request do
   end
 
   describe 'POST /favourites' do
-    
-
     it 'adds a book as a favourite' do
       post '/favourites', params: {
         favourite: {
@@ -40,12 +42,12 @@ RSpec.describe 'favourites requests', type: :request do
   end
 
   describe 'DELETE /favourites' do
-    let(:favourite) {
+    let(:favourite) do
       Favourite.new(
-        book: book,
-        user: user
+        book:,
+        user:
       )
-    }
+    end
 
     before do
       favourite.save!
@@ -53,19 +55,19 @@ RSpec.describe 'favourites requests', type: :request do
 
     it 'deletes a favourite book association' do
       delete "/favourites/#{favourite.id}"
-      
+
       expect(response).to have_http_status(:ok)
       expect(response.body).to match(/Deleted from favourites/)
     end
   end
 
   describe 'GET /favourites/{id}' do
-    let(:favourite) {
+    let(:favourite) do
       Favourite.new(
-        book: book,
-        user: user
+        book:,
+        user:
       )
-    }
+    end
 
     before do
       favourite.save!
