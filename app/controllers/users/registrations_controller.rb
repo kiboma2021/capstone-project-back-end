@@ -29,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         }, status: :unprocessable_entity
       end
     elsif request.method == 'DELETE'
-      if resource.destroy
+      if current_user.destroy
         render json: {
           status: { code: 200, message: 'Account deleted successfully.' }
         }, status: :ok
