@@ -13,10 +13,19 @@ class Users::SessionsController < Devise::SessionsController
   # }
 
   def respond_with(resource, _opts = {})
-    render json: {
-      status: { code: 200, message: 'Logged in sucessfully.' },
-      data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
-    }, status: :ok
+    if resource.persisted?
+      render json: {
+        status: { code: 200, message: 'Logged in successfully.' },
+        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+      }, status: :ok
+    else
+      render json: {
+        code: 422,
+        message: "User could't log in. #{
+          resource.errors.full_messages.to_sentence
+        }"
+      }, status: :unprocessable_entity
+    end
   end
 
   # Logout: POST http://localhost:4000/logout
