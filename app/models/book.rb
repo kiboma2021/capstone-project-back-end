@@ -2,7 +2,7 @@ class Book < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   belongs_to :user
   has_many :favourites, dependent: :destroy
-  has_many :users, through: :favorites
+  has_many :users, through: :favourites
   validates :title, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :author, presence: true
