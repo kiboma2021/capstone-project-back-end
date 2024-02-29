@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :books, only: [:create, :index, :show, :destroy]
   resources :favourites, only: [:create, :destroy, :show, :index]
+  #documentation link: http://localhost:4000/api-docs/index.html
 end

@@ -39,11 +39,13 @@ class FavouritesController < ApplicationController
 
   # GET http://localhost:4000/favourites?id={user_id}
   def index
-    user_id = params[:id]
-    @user = User.find(user_id)
-    @book = @user.books
-    @favourites = @user.favourites.includes(:book)
-    render json: @favourites.as_json(include: { book: { methods: :image_url } })
+    @user_id = params[:id]
+    if @user_id
+      @favourites = Favourite.where(user_id: @user_id).includes(:book)
+      render json: @favourites.as_json(include: { book: { methods: :image_url } })
+    else
+      render json: { message: 'User not found' }, status: :not_found
+    end
   end
 
   private
