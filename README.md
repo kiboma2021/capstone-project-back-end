@@ -131,7 +131,7 @@ In order to create databases and run the tests, you need to follow this steps:
 1. Remove config/master.key and config/credentials.yml.enc if they exist.
 2. Run `rails secret`. This will generate a key. Copy and reserve the key to use later.
 3. If you use Windows run: `$env:EDITOR="code --wait"; rails credentials:edit` If you use Linux run: `EDITOR="code --wait" bin/rails credentials:edit`
-4. Your editor will open a file, add at the bottom `secret_key_base: <the key you copied in step 2>`
+4. Your editor will open a file, add at the bottom `devise_jwt_secret_key: <the key you copied in step 2>`
 5. Save the file and close the editor.  New master.key, credentials.yml.enc files will be generated, and the key will be stored in `Rails.application.credentials.devise_jwt_secret_key`.
 
 ### Database Setup
