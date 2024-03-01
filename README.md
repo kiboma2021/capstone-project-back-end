@@ -1,291 +1,258 @@
+<div align="center">
+
 <a name="readme-top"></a>
 
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>Final Capstone Project Back End</b></h3>
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 final\_capstone\_back\_end ](#-final_capstone_back_end-)
+  - [💻 link to front end ](#-link-to-front-end-)
+  - [💻 link to Kanban board information ](#-link-to-kanban-board-information-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Database Setup](#database-setup)
+    - [Usage](#usage)
+  - [💻 Tests ](#tests-)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Final Capstone Back End <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+**final_capstone_back_end** The back-end component of this final capstone project is developed using Ruby on Rails, configured to serve as an API. This API is designed to facilitate book appointments, and to allow users to make reservations. It leverages a PostgreSQL database to manage and store reservation data. The API is designed to be consumed by a front-end application, which is developed using React.js.
 
-**[your_project__name]** is a...
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Link to front end <a name="built-with"></a>
+
+[Link to Front End](https://github.com/kiboma2021/capstone-project-front-end)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 link to Kanban board information <a name="built-with"></a>
+
+[Link to Kanban Board](https://github.com/users/kiboma2021/projects/5)
+
+[Initial state](https://github.com/kiboma2021/capstone-project-front-end/issues/17)
+
+Link to api docs: http://localhost:4000/api-docs/index.html
+
+This project was completed by four Team members:
+
+- Kevin Cruz || @EvansSnave
+- Zabi Noori || @ZabihullahNooriWardak
+- Maro Monroy || @Movgto
+- Ben Kiboma || @kiboma2021
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
-  <summary>Client</summary>
+  <summary>Technologies</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
+<details>
+<summary>Linters</summary>
+  <ul>
+    <li>Rubocop</li>
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- **Ruby on Rails**
+- **API Endpoint**
+- **Professional Documentation**
+- **Linting for Code Quality**
+- **Postgres Database**
+- **Git Version Control**
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
+To get a local copy up and running, follow these steps:
 
 ### Prerequisites
 
-In order to run this project you need:
+Before you begin, ensure you have the following prerequisites installed on your system:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Ruby: You need Ruby to run the Ruby on Rails application.
+- Bundler: Bundler is used to manage gem dependencies for your Ruby project.
 
 ### Setup
 
-Clone this repository to your desired folder:
-
-<!--
-Example commands:
+In your terminal, navigate to the folder of your choice and clone the repository with the following commands:
 
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+cd my-folder
+git https://github.com/kiboma2021/capstone-project-back-end
+
 ```
---->
 
 ### Install
 
-Install this project with:
-
-<!--
-Example command:
+After cloning the project, change into the project directory:
 
 ```sh
-  cd my-project
-  gem install
-```
---->
+cd capstone-project-back-end
 
+```
+
+Install this project with:
+
+- gem install rails
+- bundle install
+
+### Credentials setup
+In order to create databases and run the tests, you need to follow this steps:
+1. Remove config/master.key and config/credentials.yml.enc if they exist.
+2. Run `rails secret`. This will generate a key. Copy and reserve the key to use later.
+3. If you use Windows run: `$env:EDITOR="code --wait"; rails credentials:edit` If you use Linux run: `EDITOR="code --wait" bin/rails credentials:edit`
+4. Your editor will open a file, add at the bottom `devise_jwt_secret_key: <the key you copied in step 2>`
+5. Save the file and close the editor.  New master.key, credentials.yml.enc files will be generated, and the key will be stored in `Rails.application.credentials.devise_jwt_secret_key`.
+
+### Database Setup
+
+Create and migrate your database with:
+
+```sh
+
+rails db:create
+rails db:migrate
+rails db:seed
+
+```
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
 ```sh
 
+rails server
+or
+rails s
+
 ```
- -->
+This should start your local server on http://localhost:4000/. Now, you can use the REST API client of your choice to interact with the API.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
+## Tests <a name="tests"></a>
+
+To run tests, navigate to the directory where the project is located on your machine, open your terminal, and follow these steps:
+
+Test Suite
+This project contains a suite of unit tests which you can run to ensure everything is functioning as expected. To run these tests, you need RSpec installed.
+
+To install RSpec if you haven't already, run:
+
+gem install rspec
+After you've installed RSpec, you can run the tests with:
+
+bundle exec rspec spec/models
+bundle exec rspec spec/requests/books_requests_spec.rb
+bundle exec rspec spec/requests/favourites_requests_spec.rb
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **EvanSnave**
 
-👤 **Author1**
+- GitHub: [EvansSnave](https://github.com/EvansSnave)
+- Twitter: [Kroja13](https://twitter.com/Kroja13)
+- LinkedIn: [Kevin Cruz](https://www.linkedin.com/in/kevin-cruz-25159a201/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **kiboma2021**
 
-👤 **Author2**
+- GitHub: [kiboma2021](https://github.com/kiboma2021)
+- Twitter: [OmayiobenJ](https://twitter.com/OmayiobenJ)
+- LinkedIn: [Ben Kiboma Omayio](https://www.linkedin.com/in/ben-kiboma/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Movgto**
+
+- GitHub: [Movgto](https://github.com/Movgto)
+- LinkedIn: [Gumaro Monroy Vazquez](https://www.linkedin.com/in/gumaro-monroy-vazquez-1705aa165/)
+
+👤 **Zabih Noori**
+
+- GitHub: [ZabihullahNooriWardak](https://github.com/ZabihullahNooriWardak)
+- Facebook: [Zabi Ullah Noori](https://www.facebook.com/people/Zabi-Ullah-Noori/pfbid0k9yQi2Pd1YRRq3vaAWznguCocJjJKsquzfp7agutqJ93VrWFDWC4SLsREzsBdgZfl/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+- [ ] **Implement proper user authentication from the front-end to the server**
+- [ ] **Add authorizations to users**
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/kiboma2021/capstone-project-back-end/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project please feel free to send us corrections for make it better we would feel glad to read your comments.
+And think If you enjoy it gift us a star.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+- Behance and Murat Korkmaz for the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- Microverse for providing the opportunity to learn in a collaborative environment.
+- React.js Documentation for valuable resources on React development.
+- GitHub for version control and collaboration tools.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **Can I use with a templeate your project?**
 
-- **[Question_1]**
+  - Of course we would feel honored.
 
-  - [Answer_1]
+- **Your project is free license?**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - Yeah, you can use it completely.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is licensed under the MIT License - you can click here to have more details [MIT](./LICENSE).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

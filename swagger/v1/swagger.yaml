@@ -1,0 +1,175 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/books":
+    get:
+      summary: List of books
+      tags:
+      - Books
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: Create a book
+      tags:
+      - Books
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    year:
+                      type: integer
+                    price:
+                      type: integer
+                    author:
+                      type: string
+                    rating:
+                      type: integer
+                    description:
+                      type: string
+                    user_id:
+                      type: integer
+              required:
+              - title
+              - year
+              - price
+              - author
+              - description
+              - rating
+              - user_id
+  "/books/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Show book information
+      tags:
+      - Books
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: Delete a book
+      tags:
+      - Books
+      responses:
+        '200':
+          description: successful
+  "/favourites?id={id}":
+    parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/favourites":
+    post:
+      summary: Create a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                favourite:
+                  type: object
+                  properties:
+                    user_id:
+                      type: integer
+                    book_id:
+                      type: integer
+              required:
+              - user_id
+              - book_id
+  "/favourites/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Show a reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: Delete a reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/signup":
+    post:
+      summary: Create a new user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                      format: email
+                    password:
+                      type: string
+                      format: password
+                    password_confirmation:
+                      type: string
+                      format: password
+              required:
+              - name
+              - email
+              - password
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:4000/
